@@ -1,0 +1,53 @@
+body{
+    padding: 0px;
+    margin: 0px;
+
+}
+
+:root {
+    --color-azul-marino: #264653;
+    --color-turquesa: #2A9D8F;
+    --color-amarillo-mostaza: #E9C46A;
+    --color-blanco-suave: #F4F4F4;
+    --color-gris-oscuro: #333333;
+}
+body {
+    background-color: var(--color-blanco-suave);
+    color: var(--color-gris-oscuro);
+}
+h1, h2, h3 {
+    color: var(--color-azul-marino);
+}
+#bienvenidos{
+    color: #F4F4F4;
+}
+.btn-primary {
+    background-color: var(--color-azul-marino);
+    color: #ffffff;
+}
+.btn-secondary {
+    background-color: var(--color-turquesa);
+    color: #ffffff;
+}
+.btn-cta {
+    background-color: var(--color-amarillo-mostaza);
+    color: #ffffff;
+}
+.navbar {
+    background-color: var(--color-azul-marino);
+}
+.footer {
+    background-color: var(--color-azul-marino);
+    color: #ffffff;
+}
+.carousel-inner img {
+    height: 100vh; 
+    object-fit: cover; 
+  }
+
+.jumbotron{
+    
+    background-image: url(./img/pattern2.jpeg);
+    background-size: cover;
+    width: 100%;
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="img/logofinal.png" alt="Logo" width="300px" height="200px">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0" >
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page"  href="#carouselExampleIndicators">Inicio</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link"href="#productos">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contactos</a>
+              </li>
+            </ul>
+            <button 
+              class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#cartModal">Compra <span class="badge bg-danger" id="cart-count">0</span>
+            </button>
+            <i class="bi bi-cart-check-fill fs-2"></i>
+          </div>
+        </div>
+      </nav>
+      
+       <!-- Modal del Carrito en esta sección se elabora el pop up para que cuando el cliente añada un producto al arrito
+        se muestre el contenido de la compra y las distintas carácteristicas del carrito.  -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <!-- Items del carrito -->
+            </tbody>
+          </table>
+          <div class="text-end">
+            <h5>Total: $<span id="total-price">0</span></h5>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success" id="checkout-btn">Finalizar Compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </header>
+      <div class="jumbotron text-center py-5 mt-5 mb-5  text-white">
+                <h1 id="bienvenidos">Bienvenido a Estudiantes Shop</h1>
+                <h4>Encuentra todos los productos necesarios para tu éxito académico</h4>
+            <h4> <span class="navbar-text">¡Todo lo que necesitas para tus estudios!</span></h4>
+      </div>
+
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner mx-auto">
+          <div class="carousel-item active" justify-content="center">
+            <img src="./img/foto1.jpeg" class="d-block w-100" width="500px" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/foto2.jpeg" class="d-block w-100" width="500px" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/foto3.jpeg" class="d-block w-100" width="500px" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+    <section id="productos" class="container mt-5 my-5">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card">
+                <img src="./img/computador.png" width="500px" height="400px" class="card-img-top" alt="laptop">
+                <div class="card-body">
+                  <h5 class="card-title">PORTATIL</h5>
+                  <p class="card-text">El portátil HP AMD Ryzen 3 HP 245 G9 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina. .</p>
+                  <br>
+                  <h3>$1,500,000</h3>
+                  <br>
+                  <button type="button"class= "btn btn-outline-primary add-to-cart " data-name="portatil" data-price="1500000" data-img="img/computador.png">Añadir al carrito </button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="./img/marcadores.png" width="500px" height="400px" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">MARCADORES</h5>
+                  <p class="card-text">color: 24 colores imissiu juego de rotuladores graficos de 24 colores - rotuladores de dibujo necesarios para artistas de doble punta permanente - diseno de animacion para ninos artista estudiantes dibujar coloreado resaltado y subrayado caracteristicas</p>
+                  <br>
+                  <h3>$100,000</h3>
+                  <br>
+                  <button type="button" class="btn btn-outline-primary add-to-cart" data-name="marcadores" data-price="100000" data-img="img/marcadores.png">Añadir al carrito </button> 
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="./img/cuadernos.png" width="500px" height="400px" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">CUADERNOS</h5>
+                  <p class="card-text">Cuaderno Cosido Scribe Q`Nota 100 Hojas Cuadriculado Motivos Surtidos Hombre Cuaderno 100 Hojas cuadriculado.
+                    Hoja más blanca.
+                    Motivos surtidos.</p>
+                   <br>
+                    <h3>$5,000</h3>
+                    <br>
+                  <button type="button" class="btn btn-outline-primary add-to-cart" data-name="cuadernos" data-price="5000" data-img="img/cuadernos.png">Añadir al carrito</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="./img/bolifrafo.parker.jpg" width="500px" height="400px" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">BOLIGRAFO PARKER</h5>
+                  <p class="card-text">Wordsworth & Black - Juego de pluma estilográfica, punta de espesor medio, incluye 24 cartuchos de tinta y un cargador de tinta, estuche de regalo, para hombres y mujeres, plateado y dorado</p>
+                 <br>
+                  <h3>$93,990</h3>
+                  <br>
+                  <button type="button" class="btn btn-outline-primary add-to-cart"  data-name="boligrafo-parker" data-price="93990" data-img="img/bolifrafo.parker.jpg" >Añadir al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contacto -->
+    <div class="bg-body-secondary mt-5">
+    <section id="contacto" class="container my-5">
+         <div class="text-center"><h2>Comparte con nosotros tus dudas y requerimientos</h2></div>
+          <form onsubmit="sendEmail(event)">
+              <div class="mb-3">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                  <label for="email" class="form-label">Correo electrónico</label>
+                  <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                  <label for="message" class="form-label">Mensaje</label>
+                  <textarea class="form-control" id="message" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+      </section>
+  </div>
+  <div class="b-example-divider"></div>
+  <footer id="footer" class="py-3 my-4 mt-5">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="https://www.facebook.com/" target="_blank" class="nav-link px-2 text-body-secondary">Facebook</a></li>
+      <li class="nav-item"><a href="https://www.instagram.com/" target="_blank" class="nav-link px-2 text-body-secondary">Instagram</a></li>
+      <li class="nav-item"><a href="https://www.whatsapp.com/?lang=es_LA" target="_blank" class="nav-link px-2 text-body-secondary">Whatsapp</a></li>
+      <li class="nav-item"><a href="https://www.tiktok.com/?lang=es"  target="_blank"class="nav-link px-2 text-body-secondary">Tiktok</a></li>
+      <li class="nav-item"><a href="#" target="_blank" class="nav-link px-2 text-body-secondary">About</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+  </footer>
+
+        <script src="javascript.js"></script>
+</body>
+</html>
